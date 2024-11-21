@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Portfolio</title>
+        <style>
+            body{
+                font-family: 'Poppins', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f9f9f9;
+                color: #333;
+            }
+            header{
+                text-align: center;
+                padding: 50px 20px;
+                background: linear-gradient(to right, #4facfe, #00f2fe);
+                color: #fff;
+            }
+            header h1{
+                font-size: 3rem;
+                margin: 0;
+            }
+            header p {
+                font-size: 1.2rem;
+                margin-top: 10px;
+            }
+            nav {
+                text-align: center;
+                margin-top: 10px;
+            }
+            nav a{
+                text-decoration: none;
+                color: #4facfe;
+                margin: 0 15px;
+                font-weight: bold;
+            }
+            section{
+                padding: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .projects{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+            .project-card{
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                width: 300px;
+                padding: 15px;
+                text-align: center;
+            }
+            .project-card img  {
+                max-width: 100%;
+                border-radius: 10px;
+            }
+            .project-card h3{
+                margin: 10px 0;
+                color: #4facfe;
+            }
+            .contact-form input, .contact-form textarea, .contact-form button{
+                width: 100%;
+                margin-bottom: 15px;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+            footer{
+                text-align: center;
+                padding: 20px;
+                background: #4facfe;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+        <h1>Hi I'm Samuel Baah</h1>
+        <p>Web Developer | Creating Beautiful and Functional Websites</p>
+        <nav>
+            <a href="#projects">Projects</a>
+            <a href ="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        </header>
+        <section id="about">
+            <img src="./Image/1697710628577 (1).jpeg" alt="My Image" style= "width: 150px; border-radius: 50%; display:block; margin: 0 auto;"
+            <h2>About Me</h2>
+            <p>I am a passionate web developeer with experience in creating modern and responsive wensites. I love coding, solving problems, and learning new technologies.</p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="projects">
+                <div class="projec-card">
+                    <h3>Task Tracker</h3>
+                    <p>A simple task managerment tool to add, complete, and delete tasks.</p>
+                    <a href="./public/Task Tracker.html" target="_blank"><img src="./Image/image.png" alt = "Task Tracker"/></a>
+                </div>
+
+                <div class="projec-card">
+                    <h3>Random Quote Generator</h3>
+                    <p>A simple app that generates motivational quotes at random.</p>
+                    <a href="./public/Random Quote Generator.html" target="_blank"><img src="./Image/mama.png" alt="Random Quote Generator"/></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <p>HTML, CSS, JavaScript, React, Node.js, etc</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Your Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 [Samuel Baah] All Right Reserved</p>
+        </footer>
+    </body>
+</html>

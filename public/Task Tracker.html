@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Tracker</title>
+<style>
+    body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #333;
+    }
+    .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+    text-align: center;
+    color: #4facfe;
+    }
+    .task-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    }
+    .task-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    }
+    .task-form button {
+    padding: 10px 20px;
+    border: none;
+    background: #4facfe;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    .task-form button:hover {
+    background: #3c9ed8;
+    }
+    .task-list {
+    list-style: none;
+    padding: 0;
+    }
+    .task-list li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    .task-list li.completed {
+    text-decoration: line-through;
+    color: #aaa;
+    }
+    .task-list button {
+    background: transparent;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 16px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Task Tracker</h1>
+    <form class="task-form">
+    <input type="text" id="task-input" placeholder="Enter a new task" required>
+    <button type="button" id="add-task">Add Task</button>
+    </form>
+    <ul class="task-list" id="task-list"></ul>
+</div>
+<script>
+    const taskInput = document.getElementById('task-input');
+    const addTaskButton = document.getElementById('add-task');
+    const taskList = document.getElementById('task-list');
+
+    // Add a new task
+    addTaskButton.addEventListener('click', () => {
+    const taskText = taskInput.value.trim();
+    if (taskText === '') return;
+
+    const li = document.createElement('li');
+    li.textContent = taskText;
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = '✖';
+    deleteButton.addEventListener('click', () => li.remove());
+    
+    li.addEventListener('click', () => li.classList.toggle('completed'));
+    li.appendChild(deleteButton);
+    taskList.appendChild(li);
+    taskInput.value = '';
+    });
+</script>
+</body>
+</html>
